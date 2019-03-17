@@ -1,0 +1,72 @@
+<html>
+	<head>
+	  <meta charset="utf-8">
+	  <!-- Import bootstrap css -->
+	  <link href="https://cdn.jsdelivr.net/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+	  <link href="main.css" rel="stylesheet">
+	</head>
+	<body>
+		<div id="content"></div>
+		<script id="requester-template" type="text/x-handlebars-template">
+			<table>
+				<tr>
+				  <td>Customer:</td>
+				  <td class="data">{{name}}</td>
+				</tr>
+				
+				<tr>
+					<td>Email:</td>
+					<td class="data">{{email}}</td>
+				</tr>
+				<tr>	
+					<td>Telefone:</td>
+					<td class="data">{{telefone}}</td>
+				</tr>
+					<tr>	
+					<td>CPF:</td>
+					<td class="data">{{cpf}}</td>
+				</tr>
+				{{#if tags}}
+				<tr>
+					<td>Tags:</td>
+					<td class="data">{{#each tags}}{{this}} {{/each}}</td>
+				</tr>
+				{{/if}}
+				
+				<tr>
+						<td>User Class:</td>
+						<td class="data">{{userClass}}</td>
+				</tr>
+				<tr>
+				  <td>Added:</td>
+				  <td class="data">{{created_at}}</td>
+				</tr>
+				<tr>
+				  <td>Last signed in:</td>
+				  <td class="data">{{last_login_at}}</td>
+				</tr>
+			</table>
+		</script>
+
+		<script id="error-template" type="text/x-handlebars-template">
+			<p>{{status}} - {{statusText}} error. Please report a bug at the link below.</p>
+		</script>
+
+	  <!-- Import jQuery -->
+	  <script src="https://cdn.jsdelivr.net/jquery/3.2.1/jquery.min.js"></script>
+
+	  <!-- https://github.com/zendesk/zendesk_app_framework_sdk -->
+	  <script type="text/javascript" src="https://assets.zendesk.com/apps/sdk/2.0/zaf_sdk.js"></script>
+
+	  <!-- Import the Handlebars library -->
+	  <script src="https://cdn.jsdelivr.net/handlebarsjs/4.0.8/handlebars.min.js"></script>
+
+	  <!-- Import the main.js scrip -->
+	  <script type="text/javascript" src="main.js"></script>
+
+	  <footer>
+		<a href="" target="_blank">Report a bug!</a>
+	  </footer>
+
+	</body>
+</html>
